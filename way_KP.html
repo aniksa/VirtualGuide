@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Virtual_guide</title>
+  <link rel="stylesheet" href="styles/style_ways.css"/>
+  <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+   <script>
+        //инициализация Firebase - подставьте свои значения
+        var config = {
+            apiKey: "AIzaSyAjEt56_U19qrSVbi0y80eLA_3Hob-YCxg",
+            databaseURL: "https://choose-way.firebaseio.com/"
+        };
+        firebase.initializeApp(config);
+    </script>
+	<script src="fb.js"></script>
+</head>
+<body>    
+	<div id="google_translate_element"></div>
+	<div class="container">
+		<h1> Оберіть шлях: </h1>
+		<div class="ways">
+		<!--<div>
+			<a href="map.html?way=gold_way" class="way"> "Золотий шлях" </a>
+		</div>
+		<div class="name2">
+			<button class="way"> Храми Харкова </button>
+		</div>-->
+		</div>
+		<button class="menuButton" id="back"> Назад </button> 
+		<button class="menuButton" id="next"> Далі </button>
+	</div>
+	
+	<script type="text/javascript">
+	function googleTranslateElementInit() {
+		new google.translate.TranslateElement({pageLanguage: 'uk', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false,  gaTrack: true, gaId: 'UA-15081999'}, 'google_translate_element');
+	}
+	</script>
+	<script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Singapore bus stops</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/map.css"/>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBx0WUHoYREYOD-VyWQ15p7Yy_1BazAcAI&v=3.exp"></script>
+    <script>
+        var map;
+        function initialize() {
+            // Create a simple map.
+            map = new google.maps.Map(document.getElementById('map-canvas'), {
+                zoom: 12,
+                center: {lat: 1.290270, lng: 103.851959}
+            });
+            // Load a GeoJSON from the same server as our demo.
+            map.data.loadGeoJson('data/bus-stops.json');
+            if(navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var pos = new google.maps.LatLng(position.coords.latitude,
+                        position.coords.longitude);
+                    map.panTo(pos);
+                    map.setZoom(16);
+                });
+            }
+            // global infowindow
+            var infowindow = new google.maps.InfoWindow();
+            // When the user clicks, open an infowindow
+            map.data.addListener('click', function(event) {
+                var id = event.feature.getProperty("BUS_STOP_N");
+                var name = event.feature.getProperty("LOC_DESC");
+                var pos = event.feature.getGeometry().get();
+                infowindow.setContent("<a href=http://bus.dabase.com/?id=" + id + "&name=" + encodeURIComponent(name) + "&lat=" + pos.A + "&lon=" + pos.F + ">" + name + "</a>");
+                infowindow.setPosition(pos);
+                infowindow.setOptions({pixelOffset: new google.maps.Size(0,-30)});
+                infowindow.open(map);
+            });
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+</head>
+<body>
+<div id="map-canvas"></div>
+<div class="location">
+			<p> <h2> Введіть своє місце положення: </h2> </p> 
+			<div class="box">
+				<div class="container-1">
+					<span class="icon"><i class="fa fa-search"></i></span>
+					<input type="search" id="search" placeholder="Пошук..." />
+				</div>
+			</div>
+				<!--<button class="way"> Храми Харкова </button>-->
+			</div>
+</body>
+</html>

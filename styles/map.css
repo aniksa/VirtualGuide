@@ -1,0 +1,22 @@
+ body {
+    background-color: #18F427;
+ }
+ 
+#map-canvas{
+	margin: auto;
+	width: 95%;
+	height:650px; 
+	text-align: middle;
+	border: 4px dotted #006400;
+}
+		
+.location{
+	width: 40%;
+	height: 20%; 
+	vertical-align: middle;
+	text-align: center;
+	position:fixed;
+	bottom: 100px;
+	left:50px;
+	background: rgba(111,245,158,0.61); /* Полупрозрачный цвет фона */
+}
