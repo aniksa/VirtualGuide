@@ -62,7 +62,7 @@ h2{
 	margin-bottom: 25px;
  line-height:18%;}
  
- button:hover{
+ button:hover, menuButton:hover{
 	-webkit-box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
      -khtml-box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
        -moz-box-shadow:rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
@@ -72,6 +72,7 @@ h2{
   }
     
  .menuButton{
+	  display:block;
 	text-align: center;
 	/*margin-left: 40px;*/
 	width: 9%;
@@ -91,18 +92,15 @@ h2{
     border-radius: 40px; /* Радиус скругления */
 	margin-bottom: 30px;
 	line-height:20%;
- }
- 
- #back{
-	 margin-left: 15%;
+ 	 margin-left: 45%;
 	  background: linear-gradient(to right, #191970 50%, #00FF00 100%);
  }
  
-  #next{
+ /* #next{
 	 
    	margin-left: 45%;
 	background: linear-gradient(to left, #191970 50%, #00FF00 100%);
- }
+ }*/
   
   .menuButton:hover{
 	text-align: center;
@@ -115,7 +113,9 @@ h2{
       padding: 10px 10px; /* Поля вокруг текста */
     color: #8B008B; /* Цвет текста */
     border: 1px solid #191970; /* Параметры рамки */
-    border-radius: 40px; /* Радиус скругления */
+	   border-radius: 40px; /* Радиус скругления */
+	   margin-left: 45%;
 		line-height:20%;
 }
 	
+
