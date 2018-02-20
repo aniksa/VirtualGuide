@@ -31,7 +31,7 @@
                 var id = event.feature.getProperty("BUS_STOP_N");
                 var name = event.feature.getProperty("LOC_DESC");
                 var pos = event.feature.getGeometry().get();
-                infowindow.setContent("<a href=http://bus.dabase.com/?id=" + id + "&name=" + encodeURIComponent(name) + "&lat=" + pos.A + "&lon=" + pos.F + ">" + name + "</a>");
+                infowindow.setContent("<a href=''" + id + "&name=" + encodeURIComponent(name) + "&lat=" + pos.A + "&lon=" + pos.F + ">" + name + "</a>");
                 infowindow.setPosition(pos);
                 infowindow.setOptions({pixelOffset: new google.maps.Size(0,-30)});
                 infowindow.open(map);
