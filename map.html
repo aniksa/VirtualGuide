@@ -15,7 +15,7 @@
                 center: {lat: 50.21231608, lng: 36.12991993}
             });
             // Load a GeoJSON from the same server as our demo.
-            map.data.loadGeoJson('data/bus-stops.json');
+            map.data.loadGeoJson('data/way1.json');
             if(navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function(position) {
                     var pos = new google.maps.LatLng(position.coords.latitude,
