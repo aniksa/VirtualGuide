@@ -36,6 +36,15 @@
                 infowindow.setOptions({pixelOffset: new google.maps.Size(0,-30)});
                 infowindow.open(map);
             });
+	   map.data.addListener('rightclick', function(event) {
+                var id = event.feature.getProperty("BUS_STOP_N");
+                var name = event.feature.getProperty("LOC_DESC");
+                var pos = event.feature.getGeometry().get();
+                infowindow.setContent("answer");
+                infowindow.setPosition(pos);
+                infowindow.setOptions({pixelOffset: new google.maps.Size(0,-30)});
+                infowindow.open(map);
+            });
         }
         google.maps.event.addDomListener(window, 'load', initialize);
     </script>
